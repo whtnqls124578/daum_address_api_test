@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.min.js"></script>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#find-btn").click(function(){
+                alert("주소찾기 클릭!")
+                new daum.Postcode({
+                oncomplete: function(data) {//완료됐을때... 검색결과 클릭하면...
+                    //data는 객체고 이 안에 내용을 뽑아낸다...
+                    //data.zonecode - 우편번호
+                    //data.address
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+                // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+                }
+                }).open();//팝업창 열기
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <button id="find-btn">주소 찾기</button>
+</body>
+</html>
