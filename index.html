@@ -16,7 +16,9 @@
                 oncomplete: function(data) {//완료됐을때... 검색결과 클릭하면...
                     //data는 객체고 이 안에 내용을 뽑아낸다...
                     //data.zonecode - 우편번호
-                    //data.address
+                    //data.address - 기본주소
+                    $("#zonecode").val(data.zonecode)
+                    $("#address").val(data.address)
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
                 // 예제를 참고하여 다양한 활용법을 확인해 보세요.
                 }
@@ -27,6 +29,9 @@
     </script>
 </head>
 <body>
+    <input type="text" id="zonecode">
+    <input type="text" id="address">
+
     <button id="find-btn">주소 찾기</button>
 </body>
 </html>
